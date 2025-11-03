@@ -3,215 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio de Facundo</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
-
+  <title>Facundo | Portafolio</title>
   <style>
-    :root {
-      --bg-color: #121212;
-      --card-color: #1e1e1e;
-      --accent-color: #00b4d8;
-      --text-color: #e0e0e0;
-      --hover-color: #0077b6;
+    /* --- Configuración general --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Roboto', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    header {
-      background: black;
+      background-color: #111;
       color: white;
-      padding: 60px 20px;
+    }
+
+    /* --- Sección principal (portada) --- */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(20, 20, 20, 0.8)), url("fondel.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    }
-
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3em;
-      margin-bottom: 10px;
-      color: var(--accent-color);
-    }
-
-    header p {
-      font-size: 1.3em;
-      color: #ccc;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: auto;
       padding: 20px;
     }
 
-    section {
-      background: var(--card-color);
-      border-radius: 12px;
-      padding: 25px;
-      margin: 25px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .contenido {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 800px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     }
 
-    section:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    h1 {
+      font-size: 2.8rem;
+      color: #00bfff;
+      margin-bottom: 10px;
     }
 
     h2 {
-      color: var(--accent-color);
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: #cccccc;
+      margin-bottom: 25px;
     }
 
-    .proyecto img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 15px 0;
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #e0e0e0;
     }
 
-    a.button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
-      background: var(--accent-color);
+    .boton {
+      background-color: #00bfff;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      padding: 10px 25px;
+      border-radius: 8px;
       font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
+      transition: 0.3s;
     }
 
-    a.button:hover {
-      background: var(--hover-color);
+    .boton:hover {
+      background-color: #0095cc;
       transform: scale(1.05);
     }
 
-    ul { list-style: none; padding: 0; }
-    li { padding: 8px 0; font-weight: 500; }
-
-    .contacto a {
-      color: var(--accent-color);
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
-      transition: color 0.3s;
+    /* --- Sección de proyectos --- */
+    .proyectos {
+      background-color: #1a1a1a;
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    .contacto a:hover { color: var(--hover-color); }
+    .proyectos h2 {
+      color: #00bfff;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #222;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #00bfff;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
 
     footer {
+      background-color: #0d0d0d;
       text-align: center;
       padding: 20px;
-      background: #1a1a1a;
-      color: #888;
-      font-size: 0.9em;
+      color: #777;
+      font-size: 0.9rem;
     }
-
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-    }
-
-    @keyframes fadeIn { to { opacity: 1; } }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1 class="fade-in">Facundo 👨‍💻</h1>
-    <p class="fade-in" style="animation-delay: 0.2s;">Estudiante de Informática | IA, Robótica y Desarrollo Tecnológico</p>
-  </header>
+  <!-- Portada principal -->
+  <section class="hero">
+    <div class="contenido">
+      <h1>Facundo</h1>
+      <h2>Estudiante de Informática | Apasionado por la IA, Robótica y Programación</h2>
+      <p>
+        Tengo 17 años y estoy en quinto año. Me apasionan la inteligencia artificial, el hardware y el desarrollo web.  
+        He realizado proyectos como un bastón inteligente con sensores y un videojuego 2D en Godot.  
+        También aprendí sobre bases de datos (MySQL) y realicé prácticas con Arduino como semáforos y dispensadores automáticos.
+      </p>
+      <p>
+        Actualmente desarrollo una red social llamada <strong>Affinity</strong>, que busca conectar personas con los mismos gustos.
+      </p>
+      <a href="https://github.com/tuusuario" class="boton" target="_blank">Ver mi GitHub</a>
+    </div>
+  </section>
 
-  <main>
-
-    <!-- Sobre mí -->
-    <section class="fade-in">
-      <h2>👋 Sobre mí</h2>
-      <p>Tengo 17 años y soy estudiante de quinto año de Informática. Me apasionan la <strong>inteligencia artificial</strong>, la <strong>robótica</strong>, la <strong>electrónica</strong> y la <strong>programación</strong>.  
-      Disfruto crear proyectos que combinan hardware y software, y aprender nuevas tecnologías cada día.</p>
-    </section>
-
-    <!-- Educación -->
-    <section class="fade-in">
-      <h2>🎓 Educación</h2>
-      <p>Actualmente curso el <strong>quinto año de la orientación en Informática</strong>.  
-      He aprendido sobre programación, lógica computacional y <strong>bases de datos (MySQL)</strong>.  
-      También realizo proyectos prácticos para reforzar lo aprendido.</p>
-    </section>
-
-    <!-- Proyectos -->
-    <section class="fade-in proyecto">
-      <h2>🔧 Bastón Inteligente</h2>
-      <img src="baston.png" alt="Bastón Inteligente">
-      <p>Proyecto asistivo con sensor ultrasónico y motor de vibración para personas no videntes.</p>
-      <p><strong>Tecnologías:</strong> Arduino, sensores ultrasónicos, motor de vibración, Tinkercad</p>
-      <a href="https://github.com/tuusuario/baston-inteligente" target="_blank" class="button">Ver en GitHub</a>
-    </section>
-
-    <section class="fade-in proyecto">
-      <h2>🎮 Videojuego 2D en Godot</h2>
-      <img src="videojuego.png" alt="Videojuego Godot">
-      <p>Juego que responde al sonido captado por el micrófono, desarrollado en Godot Engine.</p>
-      <p><strong>Tecnologías:</strong> Godot, GDScript, sonido interactivo</p>
-      <a href="https://github.com/tuusuario/videojuego-sonido" target="_blank" class="button">Ver en GitHub</a>
-    </section>
-
-    <section class="fade-in proyecto">
-      <h2>🌐 Red Social Affinity</h2>
-      <img src="affinity.png" alt="Red Social Affinity">
-      <p>Proyecto en desarrollo: una red social que busca <strong>conectar personas con los mismos gustos</strong> mediante coincidencias inteligentes.</p>
-      <p><strong>Objetivo:</strong> utilizar IA y análisis de afinidades para generar conexiones reales.</p>
-    </section>
-
-    <section class="fade-in proyecto">
-      <h2>⚡ Mini prácticas con Arduino</h2>
-      <p>Experimentos educativos con sensores y actuadores:</p>
-      <ul>
-        <li>🚦 Semáforo con LEDs</li>
-        <li>🐾 Dispensador automático de comida para animales</li>
-      </ul>
-    </section>
-
-    <!-- Habilidades -->
-    <section class="fade-in habilidades">
-      <h2>💡 Habilidades</h2>
-      <ul>
-        <li>Lenguajes: Python, C++, GDScript</li>
-        <li>Base de datos: MySQL</li>
-        <li>Plataformas: Arduino, Godot</li>
-        <li>Herramientas: Tinkercad, Visual Studio Code, GitHub</li>
-        <li>Intereses: Inteligencia Artificial, Robótica, Hardware, Desarrollo Web</li>
-      </ul>
-    </section>
-
-    <!-- Objetivo -->
-    <section class="fade-in">
-      <h2>🚀 Objetivo</h2>
-      <p>Busco seguir aprendiendo sobre <strong>inteligencia artificial</strong>, <strong>hardware</strong> y <strong>desarrollo web</strong>.  
-      Mi meta es crear proyectos que combinen creatividad, tecnología y utilidad para mejorar la vida de las personas.</p>
-    </section>
-
-    <!-- Contacto -->
-    <section class="fade-in contacto">
-      <h2>📫 Contacto</h2>
-      <p>Email: <a href="mailto:facundo@gmail.com">facundo@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/tuusuario" target="_blank">https://github.com/tuusuario</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/tuusuario" target="_blank">Perfil LinkedIn</a></p>
-    </section>
-
-  </main>
+  <!-- Sección de proyectos -->
+  <section class="proyectos">
+    <h2>Mis Proyectos</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="baston.jpg" alt="Bastón inteligente">
+        <h3>Bastón Inteligente</h3>
+        <p>Proyecto con sensores ultrasónicos, motor de vibración y Arduino. Diseñado para asistir a personas no videntes detectando obstáculos cercanos.</p>
+      </div>
+      <div class="card">
+        <img src="videojuego.jpg" alt="Videojuego en Godot">
+        <h3>Videojuego 2D</h3>
+        <p>Desarrollado en Godot, un videojuego interactivo con mecánicas simples. Usé lógica de programación, diseño y trabajo en equipo.</p>
+      </div>
+      <div class="card">
+        <img src="affinity.jpg" alt="Affinity red social">
+        <h3>Affinity (Red Social)</h3>
+        <p>Idea de red social basada en gustos compartidos, diseñada para conectar personas con intereses comunes y fomentar nuevas amistades.</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    © 2025 Facundo - Todos los derechos reservados
+    © 2025 Facundo — Desarrollado con HTML y CSS
   </footer>
 </body>
 </html>
