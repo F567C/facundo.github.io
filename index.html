@@ -9,15 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
 
   <style>
-    /* Variables de color */
+    /* Paleta de colores modo oscuro */
     :root {
-      --primary-color: #1e90ff;
-      --secondary-color: #28a745;
-      --bg-color: #f4f4f4;
-      --text-color: #333;
+      --bg-color: #121212;
+      --card-color: #1e1e1e;
+      --accent-color: #00b4d8;
+      --text-color: #e0e0e0;
+      --hover-color: #0077b6;
     }
 
-    /* Reset básico */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -27,118 +27,115 @@
       line-height: 1.6;
     }
 
-    /* Header */
     header {
-      background: var(--primary-color);
+      background: black;
       color: white;
       padding: 60px 20px;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
+
     header h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 3em;
       margin-bottom: 10px;
+      color: var(--accent-color);
     }
+
     header p {
       font-size: 1.3em;
+      color: #ccc;
     }
 
-    /* Main */
-    main { max-width: 1000px; margin: auto; padding: 20px; }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
 
-    /* Proyectos */
-    .proyecto {
-      background: white;
+    .proyecto, .habilidades, .contacto {
+      background: var(--card-color);
       border-radius: 12px;
       padding: 25px;
       margin: 25px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .proyecto:hover {
+
+    .proyecto:hover, .habilidades:hover, .contacto:hover {
       transform: translateY(-7px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
+
+    .proyecto h2, .habilidades h2, .contacto h2 {
+      color: var(--accent-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
     .proyecto img {
       max-width: 100%;
       border-radius: 12px;
       margin: 15px 0;
     }
-    .proyecto a.button {
+
+    a.button {
       display: inline-block;
       margin-top: 15px;
       padding: 12px 25px;
-      background: var(--primary-color);
+      background: var(--accent-color);
       color: white;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
       transition: background 0.3s, transform 0.3s;
     }
-    .proyecto a.button:hover {
-      background: #0f6cd1;
+
+    a.button:hover {
+      background: var(--hover-color);
       transform: scale(1.05);
     }
 
-    /* Habilidades */
-    .habilidades {
-      background: white;
-      border-radius: 12px;
-      padding: 25px;
-      margin: 25px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .habilidades ul { list-style: none; padding: 0; }
-    .habilidades li { padding: 8px 0; font-weight: 500; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 8px 0; font-weight: 500; }
 
-    /* Contacto */
-    .contacto {
-      background: white;
-      border-radius: 12px;
-      padding: 25px;
-      margin: 25px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      text-align: center;
-    }
     .contacto a {
-      color: var(--primary-color);
+      color: var(--accent-color);
       text-decoration: none;
       font-weight: bold;
       margin: 0 10px;
       transition: color 0.3s;
     }
-    .contacto a:hover { color: var(--secondary-color); }
 
-    /* Footer */
+    .contacto a:hover { color: var(--hover-color); }
+
     footer {
       text-align: center;
       padding: 20px;
-      background: #ddd;
-      margin-top: 30px;
+      background: #1a1a1a;
+      color: #888;
       font-size: 0.9em;
     }
 
-    /* Animación de aparición */
+    /* Efecto de aparición suave */
     .fade-in {
       opacity: 0;
       animation: fadeIn 1s forwards;
     }
-    @keyframes fadeIn { to { opacity: 1; } }
 
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
   </style>
 </head>
-<body>
 
-  <!-- Header -->
+<body>
   <header>
-    <h1 class="fade-in">Facundo </h1>
-    <p class="fade-in" style="animation-delay: 0.2s;">Estudiante de Informática | Programación, Electrónica y Videojuegos 2D</p>
+    <h1 class="fade-in">Facundo 👨‍💻</h1>
+    <p class="fade-in" style="animation-delay: 0.2s;">Estudiante de Informática | Electrónica y Desarrollo de Videojuegos 2D</p>
   </header>
 
   <main>
-
-    <!-- Proyecto 1 -->
     <div class="proyecto fade-in">
       <h2>🔧 Bastón Inteligente</h2>
       <img src="baston.png" alt="Bastón Inteligente">
@@ -147,39 +144,34 @@
       <a href="https://github.com/tuusuario/baston-inteligente" target="_blank" class="button">Ver proyecto en GitHub</a>
     </div>
 
-    <!-- Proyecto 2 -->
     <div class="proyecto fade-in">
       <h2>🎮 Videojuego 2D en Godot</h2>
       <img src="videojuego.png" alt="Videojuego Godot">
-      <p>Juego que responde al sonido captado por el micrófono, con interacción dinámica y niveles simples.</p>
+      <p>Juego interactivo que responde al sonido captado por el micrófono, desarrollado en Godot.</p>
       <p><strong>Tecnologías:</strong> Godot, GDScript, sonido interactivo</p>
       <a href="https://github.com/tuusuario/videojuego-sonido" target="_blank" class="button">Ver proyecto en GitHub</a>
     </div>
 
-    <!-- Habilidades -->
     <div class="habilidades fade-in">
-      <h2>💡 Habilidades y herramientas</h2>
+      <h2> Habilidades</h2>
       <ul>
         <li>Lenguajes: Python, C++, GDScript</li>
         <li>Plataformas: Arduino, Godot</li>
         <li>Herramientas: Tinkercad, Visual Studio Code, GitHub</li>
-        <li>Conceptos: Programación orientada a objetos, sensores, electrónica básica</li>
+        <li>Conceptos: Sensores, electrónica básica, programación orientada a objetos</li>
       </ul>
     </div>
 
-    <!-- Contacto -->
     <div class="contacto fade-in">
       <h2>📫 Contacto</h2>
       <p>Email: <a href="mailto:facundo@gmail.com">facundo@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/tuusuario" target="_blank">https://github.com/tuusuario</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/tuusuario" target="_blank">Perfil LinkedIn</a></p>
     </div>
-
   </main>
 
   <footer>
     © 2025 Facundo - Todos los derechos reservados
   </footer>
-
 </body>
 </html>
