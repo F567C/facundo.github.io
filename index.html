@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Facundo | Portafolio</title>
+
   <style>
     /* --- Configuración general --- */
     * {
@@ -11,6 +12,7 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -18,10 +20,21 @@
       color: white;
     }
 
+    /* --- Animaciones --- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* --- Sección principal (portada) --- */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(20, 20, 20, 0.8)), url("fondel.JPG");
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(20, 20, 20, 0.8)), url("fondel.jpg");
       background-size: cover;
       background-position: center;
       display: flex;
@@ -32,11 +45,21 @@
     }
 
     .contenido {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.55);
       padding: 40px;
       border-radius: 20px;
       max-width: 800px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .perfil {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00bfff;
+      margin-bottom: 15px;
     }
 
     h1 {
@@ -84,6 +107,7 @@
       color: #00bfff;
       font-size: 2rem;
       margin-bottom: 30px;
+      animation: fadeUp 1s ease-in-out;
     }
 
     .grid {
@@ -99,11 +123,13 @@
       border-radius: 15px;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeUp 1.2s ease-in-out;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0,191,255,0.4);
     }
 
     .card img {
@@ -122,6 +148,25 @@
       font-size: 0.95rem;
     }
 
+    /* --- Contacto --- */
+    .contacto {
+      background-color: #111;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .contacto h2 {
+      color: #00bfff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .contacto p {
+      color: #ccc;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
     footer {
       background-color: #0d0d0d;
       text-align: center;
@@ -131,10 +176,12 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Portada principal -->
   <section class="hero">
     <div class="contenido">
+      <img src="perfil.jpg" alt="Foto de Facundo" class="perfil">
       <h1>Facundo</h1>
       <h2>Estudiante de Informática | Apasionado por la IA, Robótica y Programación</h2>
       <p>
@@ -150,7 +197,7 @@
   </section>
 
   <!-- Sección de proyectos -->
-  <section class="proyectos">
+  <section class="proyectos" id="proyectos">
     <h2>Mis Proyectos</h2>
     <div class="grid">
       <div class="card">
@@ -169,6 +216,15 @@
         <p>Idea de red social basada en gustos compartidos, diseñada para conectar personas con intereses comunes y fomentar nuevas amistades.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Sección de contacto -->
+  <section class="contacto" id="contacto">
+    <h2>Contacto</h2>
+    <p>📧 Email: tuemail@example.com</p>
+    <p>📱 Teléfono: +54 9 11 0000 0000</p>
+    <p>💬 LinkedIn: <a href="#" style="color:#00bfff; text-decoration:none;">linkedin.com/in/tuusuario</a></p>
+    <p>🌍 GitHub: <a href="https://github.com/tuusuario" target="_blank" style="color:#00bfff; text-decoration:none;">github.com/tuusuario</a></p>
   </section>
 
   <footer>
