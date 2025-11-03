@@ -3,27 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Portafolio</title>
+  <title>Portafolio de Facundo</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; }
-    h1 { color: #333; margin-top: 50px; }
-    .card { background: white; width: 300px; margin: 20px auto; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    a { color: #007bff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    header { background: #1e90ff; color: white; padding: 40px 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 2.5em; }
+    header p { font-size: 1.2em; margin-top: 10px; }
+    main { padding: 20px; max-width: 900px; margin: auto; }
+    .proyecto { background: white; border-radius: 10px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+    .proyecto img { max-width: 100%; border-radius: 10px; margin: 15px 0; }
+    .proyecto a { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #1e90ff; color: white; text-decoration: none; border-radius: 5px; }
+    .proyecto a:hover { background: #0f6cd1; }
+    .habilidades, .contacto { background: white; border-radius: 10px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .habilidades ul { list-style: none; padding: 0; }
+    .habilidades li { padding: 5px 0; }
+    footer { text-align: center; padding: 20px; background: #ddd; margin-top: 20px; }
   </style>
 </head>
 <body>
-  <h1>Hola, soy Facundo 👋</h1>
-  <p>Desarrollador y creador de proyectos con Arduino y Godot.</p>
-  <div class="card">
-    <h3>Proyecto 1: Bastón inteligente</h3>
-    <p>Un bastón con sensor ultrasónico y motor de vibración para personas no videntes.</p>
-    <a href="https://github.com/tuusuario/baston-inteligente">Ver en GitHub</a>
-  </div>
-  <div class="card">
-    <h3>Proyecto 2: Videojuego 2D</h3>
-    <p>Juego hecho en Godot que responde al sonido del micrófono.</p>
-    <a href="https://github.com/tuusuario/videojuego-sonido">Ver en GitHub</a>
-  </div>
+
+  <!-- Encabezado -->
+  <header>
+    <h1>Facundo 👋</h1>
+    <p>Estudiante de Informática | Programación, Electrónica y Videojuegos 2D</p>
+  </header>
+
+  <main>
+
+    <!-- Proyecto 1 -->
+    <div class="proyecto">
+      <h2>🔧 Bastón Inteligente</h2>
+      <img src="baston.png" alt="Bastón Inteligente">
+      <p>Bastón asistivo con sensor ultrasónico y motor de vibración para personas no videntes.</p>
+      <p><strong>Tecnologías:</strong> Arduino, sensores ultrasónicos, motor de vibración, Tinkercad</p>
+      <a href="https://github.com/tuusuario/baston-inteligente" target="_blank">Ver proyecto en GitHub</a>
+    </div>
+
+    <!-- Proyecto 2 -->
+    <div class="proyecto">
+      <h2>🎮 Videojuego 2D en Godot</h2>
+      <img src="videojuego.png" alt="Videojuego Godot">
+      <p>Juego que responde al sonido captado por el micrófono, con interacción dinámica y niveles simples.</p>
+      <p><strong>Tecnologías:</strong> Godot, GDScript, sonido interactivo</p>
+      <a href="https://github.com/tuusuario/videojuego-sonido" target="_blank">Ver proyecto en GitHub</a>
+    </div>
+
+    <!-- Habilidades -->
+    <div class="habilidades">
+      <h2>💡 Habilidades y herramientas</h2>
+      <ul>
+        <li>Lenguajes: Python, C++, GDScript</li>
+        <li>Plataformas: Arduino, Godot</li>
+        <li>Herramientas: Tinkercad, Visual Studio Code, GitHub</li>
+        <li>Conceptos: Programación orientada a objetos, sensores, electrónica básica</li>
+      </ul>
+    </div>
+
+    <!-- Contacto -->
+    <div class="contacto">
+      <h2>📫 Contacto</h2>
+      <p>Email: <a href="mailto:facundo@gmail.com">facundo@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/tuusuario" target="_blank">https://github.com/tuusuario</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tuusuario" target="_blank">Perfil LinkedIn</a></p>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2025 Facundo - Todos los derechos reservados
+  </footer>
+
 </body>
 </html>
