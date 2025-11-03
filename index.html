@@ -20,6 +20,32 @@
       color: white;
     }
 
+    /* --- Barra de navegación --- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(6px);
+      padding: 12px 0;
+      text-align: center;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    nav a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
     /* --- Animaciones --- */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -41,7 +67,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 20px;
+      padding: 100px 20px 20px; /* más espacio arriba para el menú */
     }
 
     .contenido {
@@ -60,6 +86,7 @@
       object-fit: cover;
       border: 3px solid #00bfff;
       margin-bottom: 15px;
+      margin-top: -20px; /* 🔹 sube la imagen más arriba */
     }
 
     h1 {
@@ -99,7 +126,7 @@
     /* --- Sección de proyectos --- */
     .proyectos {
       background-color: #1a1a1a;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
 
@@ -151,7 +178,7 @@
     /* --- Contacto --- */
     .contacto {
       background-color: #111;
-      padding: 50px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
@@ -167,6 +194,11 @@
       font-size: 1rem;
     }
 
+    .contacto a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+
     footer {
       background-color: #0d0d0d;
       text-align: center;
@@ -178,8 +210,15 @@
 </head>
 
 <body>
-  <!-- Portada principal -->
-  <section class="hero">
+  <!-- 🔹 Barra de navegación -->
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <!-- 🔹 Portada principal -->
+  <section class="hero" id="inicio">
     <div class="contenido">
       <img src="facu.jpg" alt="Foto de Facundo" class="perfil">
       <h1>Facundo</h1>
@@ -196,7 +235,7 @@
     </div>
   </section>
 
-  <!-- Sección de proyectos -->
+  <!-- 🔹 Sección de proyectos -->
   <section class="proyectos" id="proyectos">
     <h2>Mis Proyectos</h2>
     <div class="grid">
@@ -218,13 +257,13 @@
     </div>
   </section>
 
-  <!-- Sección de contacto -->
+  <!-- 🔹 Sección de contacto -->
   <section class="contacto" id="contacto">
     <h2>Contacto</h2>
-    <p>📧 Email: tuemail@example.com</p>
-    <p>📱 Teléfono: +54 9 11 0000 0000</p>
-    <p>💬 LinkedIn: <a href="#" style="color:#00bfff; text-decoration:none;">linkedin.com/in/tuusuario</a></p>
-    <p>🌍 GitHub: <a href="https://github.com/tuusuario" target="_blank" style="color:#00bfff; text-decoration:none;">github.com/tuusuario</a></p>
+    <p>📧 Email: facundomauriciocruzmendez@gmail.com</p>
+    <p>📱 Teléfono: 387 481 2445/p>
+    <p>💬 LinkedIn: <a href="#">linkedin.com/in/tuusuario</a></p>
+    <p>🌍 GitHub: <a href="https://github.com/tuusuario" target="_blank">github.com/tuusuario</a></p>
   </section>
 
   <footer>
