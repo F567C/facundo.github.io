@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
 
   <style>
-    /* Paleta de colores modo oscuro */
     :root {
       --bg-color: #121212;
       --card-color: #1e1e1e;
@@ -53,24 +52,24 @@
       padding: 20px;
     }
 
-    .proyecto, .habilidades, .contacto {
+    section {
       background: var(--card-color);
       border-radius: 12px;
       padding: 25px;
       margin: 25px 0;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .proyecto:hover, .habilidades:hover, .contacto:hover {
+    section:hover {
       transform: translateY(-7px);
       box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
 
-    .proyecto h2, .habilidades h2, .contacto h2 {
+    h2 {
       color: var(--accent-color);
       font-family: 'Montserrat', sans-serif;
+      margin-bottom: 10px;
     }
 
     .proyecto img {
@@ -117,57 +116,98 @@
       font-size: 0.9em;
     }
 
-    /* Efecto de aparición suave */
     .fade-in {
       opacity: 0;
       animation: fadeIn 1s forwards;
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+    @keyframes fadeIn { to { opacity: 1; } }
   </style>
 </head>
 
 <body>
   <header>
     <h1 class="fade-in">Facundo 👨‍💻</h1>
-    <p class="fade-in" style="animation-delay: 0.2s;">Estudiante de Informática | Electrónica y Desarrollo de Videojuegos 2D</p>
+    <p class="fade-in" style="animation-delay: 0.2s;">Estudiante de Informática | IA, Robótica y Desarrollo Tecnológico</p>
   </header>
 
   <main>
-    <div class="proyecto fade-in">
+
+    <!-- Sobre mí -->
+    <section class="fade-in">
+      <h2>👋 Sobre mí</h2>
+      <p>Tengo 17 años y soy estudiante de quinto año de Informática. Me apasionan la <strong>inteligencia artificial</strong>, la <strong>robótica</strong>, la <strong>electrónica</strong> y la <strong>programación</strong>.  
+      Disfruto crear proyectos que combinan hardware y software, y aprender nuevas tecnologías cada día.</p>
+    </section>
+
+    <!-- Educación -->
+    <section class="fade-in">
+      <h2>🎓 Educación</h2>
+      <p>Actualmente curso el <strong>quinto año de la orientación en Informática</strong>.  
+      He aprendido sobre programación, lógica computacional y <strong>bases de datos (MySQL)</strong>.  
+      También realizo proyectos prácticos para reforzar lo aprendido.</p>
+    </section>
+
+    <!-- Proyectos -->
+    <section class="fade-in proyecto">
       <h2>🔧 Bastón Inteligente</h2>
       <img src="baston.png" alt="Bastón Inteligente">
-      <p>Bastón asistivo con sensor ultrasónico y motor de vibración para personas no videntes.</p>
+      <p>Proyecto asistivo con sensor ultrasónico y motor de vibración para personas no videntes.</p>
       <p><strong>Tecnologías:</strong> Arduino, sensores ultrasónicos, motor de vibración, Tinkercad</p>
-      <a href="https://github.com/tuusuario/baston-inteligente" target="_blank" class="button">Ver proyecto en GitHub</a>
-    </div>
+      <a href="https://github.com/tuusuario/baston-inteligente" target="_blank" class="button">Ver en GitHub</a>
+    </section>
 
-    <div class="proyecto fade-in">
+    <section class="fade-in proyecto">
       <h2>🎮 Videojuego 2D en Godot</h2>
       <img src="videojuego.png" alt="Videojuego Godot">
-      <p>Juego interactivo que responde al sonido captado por el micrófono, desarrollado en Godot.</p>
+      <p>Juego que responde al sonido captado por el micrófono, desarrollado en Godot Engine.</p>
       <p><strong>Tecnologías:</strong> Godot, GDScript, sonido interactivo</p>
-      <a href="https://github.com/tuusuario/videojuego-sonido" target="_blank" class="button">Ver proyecto en GitHub</a>
-    </div>
+      <a href="https://github.com/tuusuario/videojuego-sonido" target="_blank" class="button">Ver en GitHub</a>
+    </section>
 
-    <div class="habilidades fade-in">
-      <h2> Habilidades</h2>
+    <section class="fade-in proyecto">
+      <h2>🌐 Red Social Affinity</h2>
+      <img src="affinity.png" alt="Red Social Affinity">
+      <p>Proyecto en desarrollo: una red social que busca <strong>conectar personas con los mismos gustos</strong> mediante coincidencias inteligentes.</p>
+      <p><strong>Objetivo:</strong> utilizar IA y análisis de afinidades para generar conexiones reales.</p>
+    </section>
+
+    <section class="fade-in proyecto">
+      <h2>⚡ Mini prácticas con Arduino</h2>
+      <p>Experimentos educativos con sensores y actuadores:</p>
+      <ul>
+        <li>🚦 Semáforo con LEDs</li>
+        <li>🐾 Dispensador automático de comida para animales</li>
+      </ul>
+    </section>
+
+    <!-- Habilidades -->
+    <section class="fade-in habilidades">
+      <h2>💡 Habilidades</h2>
       <ul>
         <li>Lenguajes: Python, C++, GDScript</li>
+        <li>Base de datos: MySQL</li>
         <li>Plataformas: Arduino, Godot</li>
         <li>Herramientas: Tinkercad, Visual Studio Code, GitHub</li>
-        <li>Conceptos: Sensores, electrónica básica, programación orientada a objetos</li>
+        <li>Intereses: Inteligencia Artificial, Robótica, Hardware, Desarrollo Web</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="contacto fade-in">
+    <!-- Objetivo -->
+    <section class="fade-in">
+      <h2>🚀 Objetivo</h2>
+      <p>Busco seguir aprendiendo sobre <strong>inteligencia artificial</strong>, <strong>hardware</strong> y <strong>desarrollo web</strong>.  
+      Mi meta es crear proyectos que combinen creatividad, tecnología y utilidad para mejorar la vida de las personas.</p>
+    </section>
+
+    <!-- Contacto -->
+    <section class="fade-in contacto">
       <h2>📫 Contacto</h2>
       <p>Email: <a href="mailto:facundo@gmail.com">facundo@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/tuusuario" target="_blank">https://github.com/tuusuario</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/tuusuario" target="_blank">Perfil LinkedIn</a></p>
-    </div>
+    </section>
+
   </main>
 
   <footer>
