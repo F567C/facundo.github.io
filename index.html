@@ -4,52 +4,160 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio de Facundo</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
-    header { background: #1e90ff; color: white; padding: 40px 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5em; }
-    header p { font-size: 1.2em; margin-top: 10px; }
-    main { padding: 20px; max-width: 900px; margin: auto; }
-    .proyecto { background: white; border-radius: 10px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
-    .proyecto img { max-width: 100%; border-radius: 10px; margin: 15px 0; }
-    .proyecto a { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #1e90ff; color: white; text-decoration: none; border-radius: 5px; }
-    .proyecto a:hover { background: #0f6cd1; }
-    .habilidades, .contacto { background: white; border-radius: 10px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    /* Variables de color */
+    :root {
+      --primary-color: #1e90ff;
+      --secondary-color: #28a745;
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+    }
+
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: var(--primary-color);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.3em;
+    }
+
+    /* Main */
+    main { max-width: 1000px; margin: auto; padding: 20px; }
+
+    /* Proyectos */
+    .proyecto {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .proyecto:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    }
+    .proyecto img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+    .proyecto a.button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .proyecto a.button:hover {
+      background: #0f6cd1;
+      transform: scale(1.05);
+    }
+
+    /* Habilidades */
+    .habilidades {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
     .habilidades ul { list-style: none; padding: 0; }
-    .habilidades li { padding: 5px 0; }
-    footer { text-align: center; padding: 20px; background: #ddd; margin-top: 20px; }
+    .habilidades li { padding: 8px 0; font-weight: 500; }
+
+    /* Contacto */
+    .contacto {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+    .contacto a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    .contacto a:hover { color: var(--secondary-color); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ddd;
+      margin-top: 30px;
+      font-size: 0.9em;
+    }
+
+    /* Animación de aparición */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+
   </style>
 </head>
 <body>
 
-  <!-- Encabezado -->
+  <!-- Header -->
   <header>
-    <h1>Facundo 👋</h1>
-    <p>Estudiante de Informática | Programación, Electrónica y Videojuegos 2D</p>
+    <h1 class="fade-in">Facundo 👋</h1>
+    <p class="fade-in" style="animation-delay: 0.2s;">Estudiante de Informática | Programación, Electrónica y Videojuegos 2D</p>
   </header>
 
   <main>
 
     <!-- Proyecto 1 -->
-    <div class="proyecto">
+    <div class="proyecto fade-in">
       <h2>🔧 Bastón Inteligente</h2>
       <img src="baston.png" alt="Bastón Inteligente">
       <p>Bastón asistivo con sensor ultrasónico y motor de vibración para personas no videntes.</p>
       <p><strong>Tecnologías:</strong> Arduino, sensores ultrasónicos, motor de vibración, Tinkercad</p>
-      <a href="https://github.com/tuusuario/baston-inteligente" target="_blank">Ver proyecto en GitHub</a>
+      <a href="https://github.com/tuusuario/baston-inteligente" target="_blank" class="button">Ver proyecto en GitHub</a>
     </div>
 
     <!-- Proyecto 2 -->
-    <div class="proyecto">
+    <div class="proyecto fade-in">
       <h2>🎮 Videojuego 2D en Godot</h2>
       <img src="videojuego.png" alt="Videojuego Godot">
       <p>Juego que responde al sonido captado por el micrófono, con interacción dinámica y niveles simples.</p>
       <p><strong>Tecnologías:</strong> Godot, GDScript, sonido interactivo</p>
-      <a href="https://github.com/tuusuario/videojuego-sonido" target="_blank">Ver proyecto en GitHub</a>
+      <a href="https://github.com/tuusuario/videojuego-sonido" target="_blank" class="button">Ver proyecto en GitHub</a>
     </div>
 
     <!-- Habilidades -->
-    <div class="habilidades">
+    <div class="habilidades fade-in">
       <h2>💡 Habilidades y herramientas</h2>
       <ul>
         <li>Lenguajes: Python, C++, GDScript</li>
@@ -60,7 +168,7 @@
     </div>
 
     <!-- Contacto -->
-    <div class="contacto">
+    <div class="contacto fade-in">
       <h2>📫 Contacto</h2>
       <p>Email: <a href="mailto:facundo@gmail.com">facundo@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/tuusuario" target="_blank">https://github.com/tuusuario</a></p>
